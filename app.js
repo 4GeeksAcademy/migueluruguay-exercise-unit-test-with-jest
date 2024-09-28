@@ -38,14 +38,25 @@ const yenes = euros*156.5/1;
 
     return yenes;    
 }
+
 const fromYenToPound = function(yenes) {
-    // Convertir yenes a euros 
-    const euros = yenes / oneEuroIs["JPY"];
+    // Convertir yenes a euros
+    /*
+    1 euro > 156.5 yenes
+    yenes > X euros
+    X = yenes * 1 / 156.5
+    */
+    const euros = yenes * 1 / oneEuroIs["JPY"];
     
-    // Convertir euros a libras 
-    const pounds = euros * oneEuroIs["GBP"];
+    // Convertir euros a libras
+    /*
+    1 euro > 0.87 libras
+    euros > x libras
+    X = euros * 0.87 / 1
+    */
+    const pounds = euros * oneEuroIs["GBP"] / 1;
     
-    // Retornar el valor en libras
+    // Retornar libras
     return pounds;
 }
 
